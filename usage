@@ -1,0 +1,31 @@
+usage: iq_update_waiver_expiries.py [-h] -s SERVER_URL -u USERNAME -p PASSWORD
+                                    [-e [OLD_EXPIRY_DATE]]
+                                    [-d [NEW_EXPIRY_DAYS_FROM_NOW]]
+                                    [-fa APPLICATION_REGEX]
+                                    [-fo ORGANIZATION_REGEX]
+                                    [-c CATEGORIES [CATEGORIES ...]]
+
+Connects to IQ and updates waivers that have been set to expire on a given
+date, or never, to a new date.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SERVER_URL         URL of IQ instance.
+  -u USERNAME           IQ user's username.
+  -p PASSWORD           IQ user's password.
+  -e [OLD_EXPIRY_DATE]  The old expiry date to update. If not assigned it will
+                        default to "never" expire. Must be in yyyy-MM-dd
+                        format if set. Defaults to None or "never" expire.
+  -d [NEW_EXPIRY_DAYS_FROM_NOW]
+                        The number of days from now to set the new expiry.
+                        Defaults to 30 days from today.
+  -fa APPLICATION_REGEX
+                        A regular expression to be matched against application
+                        public ID. Can be used in conjunction with the
+                        categoires filter.
+  -fo ORGANIZATION_REGEX
+                        A regular expression to be matched against
+                        organization name.
+  -c CATEGORIES [CATEGORIES ...]
+                        An optional list of application categories to use as a
+                        filter for applications.
